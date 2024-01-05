@@ -7,7 +7,7 @@ import useless.guitools.TriFunction;
 
 import java.util.function.BiFunction;
 
-public class GuiRegion extends GuiButton implements IGuiButtonSound, IGuiScrollable {
+public class GuiRegion extends GuiButton implements IGuiButtonSound, IGuiScrollable, IGuiRect {
 	protected BiFunction<Integer, Integer, Void> clickAction;
 	protected TriFunction<Integer, Integer, Float, Void> scrollAction;
 
@@ -57,4 +57,5 @@ public class GuiRegion extends GuiButton implements IGuiButtonSound, IGuiScrolla
 	public void onScroll() {
 
 	}
+
 }

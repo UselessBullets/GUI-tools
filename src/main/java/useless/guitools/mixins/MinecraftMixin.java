@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import useless.guitools.gui.GuiDebug;
+import useless.guitools.gui.GuiTest;
 
 @Mixin(value = Minecraft.class, remap = false)
 public abstract class MinecraftMixin {
@@ -21,7 +21,7 @@ public abstract class MinecraftMixin {
 	@Inject(method = "runTick()V", at = @At("TAIL"))
 	private void debugGUI(CallbackInfo ci){
 		if (Keyboard.isKeyDown(Keyboard.KEY_NUMPAD0)){
-			displayGuiScreen(new GuiDebug(currentScreen));
+			displayGuiScreen(new GuiTest(currentScreen));
 		}
 	}
 }

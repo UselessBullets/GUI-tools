@@ -5,7 +5,7 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.render.Tessellator;
 import org.lwjgl.opengl.GL11;
 
-public class GuiScrollbar extends GuiButton implements IGuiScrollable, IGuiButtonSound {
+public class GuiScrollbar extends GuiButton implements IGuiScrollable, IGuiButtonSound, IGuiRect {
 	public float scrollAreaHeight;
 	private float scrollAmount = 0;
 	private boolean isHeld = false;

@@ -3,7 +3,7 @@ package useless.guitools.gui.elements;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 
-public class GuiButtonAction extends GuiButton {
+public class GuiButtonAction extends GuiButton implements IGuiRect{
 	protected Runnable action;
 	public GuiButtonAction(int id, int xPosition, int yPosition, String text, Runnable action) {
 		super(id, xPosition, yPosition, text);
@@ -16,7 +16,7 @@ public class GuiButtonAction extends GuiButton {
 	}
 	public boolean mouseClicked(Minecraft mc, int mouseX, int mouseY) {
 		boolean returnVal = super.mouseClicked(mc, mouseX, mouseY);
-		if (returnVal){
+		if (returnVal && action != null){
 			action.run();
 		}
 		return returnVal;
